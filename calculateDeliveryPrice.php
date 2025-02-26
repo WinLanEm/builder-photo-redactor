@@ -2,7 +2,7 @@
 
 
 
-require_once './repository/factoryMethod/DeliveryServiceHelper.php';
+require_once './repository/factoryMethod/DeliveryServiceFactory.php';
 
 header('Access-Control-Allow-Origin: *');
 header("Access-Control-Allow-Methods: POST");
@@ -22,5 +22,5 @@ $params = [
   'distance' => $_POST['distance'],
 ];
 $service = $_POST['delivery_service'];
-$currentService = DeliveryServiceHelper::getDeliveryService($service);
-echo $currentService->calculateCost($params);
+$currentService = DeliveryServiceFactory::getDeliveryService($service,$params);
+print_r($currentService);
