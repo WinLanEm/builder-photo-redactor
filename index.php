@@ -1,6 +1,6 @@
 <?php
 
-use Proxy\ImageProxy;
+
 
 require_once 'repository/Proxy/ImageProxy.php';
 

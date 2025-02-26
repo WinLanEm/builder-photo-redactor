@@ -1,17 +1,15 @@
 <?php
 
-namespace Proxy;
-use ImageBuilder;
-use ImageWorker;
-
-require_once 'builder/ImageBuilderInterface.php';
-require_once 'builder/ImageWorker.php';
-require_once 'builder/ImageBuilder.php';
+require_once __DIR__ . '/../builder/ImageBuilderInterface.php';
+require_once __DIR__ . '/../builder/ImageWorker.php';
+require_once __DIR__ . '/../builder/ImageBuilder.php';
+require_once __DIR__ . '/../builder/Image.php';
 
 
 class ImageProxy
 {
     private $imagePath;
+    private $imageSing;
     private $style;
     private $worker;
     private $builder;
@@ -34,7 +32,9 @@ class ImageProxy
     {
         $this->imagePath = $imagePath;
         $this->image = new Imagick($this->imagePath);
-        $this->builder = new ImageBuilder($this->image);
+        $this->imageSing = new Image();
+        $this->imageSing->setImage($this->image);
+        $this->builder = new ImageBuilder($this->imageSing);
         $this->worker->setBuilder($this->builder);
     }
 

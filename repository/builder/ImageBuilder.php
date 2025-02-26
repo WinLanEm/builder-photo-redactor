@@ -2,10 +2,12 @@
 
 class ImageBuilder implements ImageBuilderInterface
 {
+    private $imageSign;
     private $image;
-    public function __construct($image)
+    public function __construct(Image $image)
     {
-        $this->reset($image);
+        $this->imageSign = $image;
+        $this->reset($image->getImage());
     }
     public function reset($image)
     {
@@ -93,7 +95,7 @@ class ImageBuilder implements ImageBuilderInterface
     {
         $this->image->blurImage($param1,$param2);
     }
-    public function getImage()
+    public function getImage():string
     {
         $this->image->setImageFormat('jpeg');
         return $this->image->getImageBlob();
