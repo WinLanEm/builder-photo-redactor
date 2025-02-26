@@ -1,5 +1,9 @@
 <?php
 
+namespace Proxy;
+use ImageBuilder;
+use ImageWorker;
+
 require_once 'builder/ImageBuilderInterface.php';
 require_once 'builder/ImageWorker.php';
 require_once 'builder/ImageBuilder.php';
@@ -49,6 +53,7 @@ class ImageProxy
     {
         $this->style = $style;
     }
+
     public function showFilteredImage()
     {
         switch ($this->style) {
@@ -56,22 +61,28 @@ class ImageProxy
                 return $this->worker->sepia();
             case "black-white":
                 return $this->worker->blackWhite(); // Здесь нужно добавить логику для black-vite
-            case "vintage":{
+            case "vintage":
+            {
                 return $this->worker->vintage();
             }
-            case 'grange':{
+            case 'grange':
+            {
                 return $this->worker->grange();
             }
-            case "polaroid":{
+            case "polaroid":
+            {
                 return $this->worker->polaroid();
             }
-            case "cross-process":{
+            case "cross-process":
+            {
                 return $this->worker->crossProcess();
             }
-            case "cinema":{
+            case "cinema":
+            {
                 return $this->worker->cinema();
             }
-            case 'aqua':{
+            case 'aqua':
+            {
                 return $this->worker->aqua();
             }
             default:

@@ -1,5 +1,8 @@
 <?php
-require_once 'repository/ImageProxy.php';
+
+use Proxy\ImageProxy;
+
+require_once 'repository/Proxy/ImageProxy.php';
 
 header('Content-Type: image/jpeg');
 header('Access-Control-Allow-Origin: *');
