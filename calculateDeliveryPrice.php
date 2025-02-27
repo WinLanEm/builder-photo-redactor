@@ -1,8 +1,6 @@
 <?php
 
-
-
-require_once './repository/factoryMethod/DeliveryServiceFactory.php';
+require_once './repository/simpleFactory/DeliveryServiceFactory.php';
 
 header('Access-Control-Allow-Origin: *');
 header("Access-Control-Allow-Methods: POST");
@@ -24,3 +22,4 @@ $params = [
 $service = $_POST['delivery_service'];
 $currentService = DeliveryServiceFactory::getDeliveryService($service,$params);
 print_r($currentService);
+//симпл фабрика

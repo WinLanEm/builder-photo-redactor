@@ -1,7 +1,4 @@
 <?php
-
-
-
 require_once 'repository/Proxy/ImageProxy.php';
 
 header('Content-Type: image/jpeg');
@@ -24,5 +21,6 @@ function setStyle($imagePath,$style)
     echo $newImage;
 }
 setStyle($imagePath,$style);
+//строитель
 
 

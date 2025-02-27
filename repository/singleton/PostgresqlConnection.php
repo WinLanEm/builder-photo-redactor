@@ -40,4 +40,8 @@ class PostgresqlConnection
     {
 
     }
+    private function __wakeup()
+    {
+
+    }
 }
