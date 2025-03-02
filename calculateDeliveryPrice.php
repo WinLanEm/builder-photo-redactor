@@ -23,3 +23,4 @@ $service = $_POST['delivery_service'];
 $currentService = DeliveryServiceFactory::getDeliveryService($service,$params);
 print_r($currentService);
 //симпл фабрика
+

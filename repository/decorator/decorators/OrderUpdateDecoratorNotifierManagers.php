@@ -1,0 +1,11 @@
+<?php
+
+require_once 'OrderUpdateDecoratorAbstract.php';
+
+class OrderUpdateDecoratorNotifierManagers extends OrderUpdateDecoratorAbstract
+{
+    protected function actionNotifyManagers()
+    {
+        echo "Менеджеры оповещены\n";
+    }
+}
