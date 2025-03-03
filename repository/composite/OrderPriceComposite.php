@@ -40,7 +40,7 @@ class OrderPriceComposite
             ];
         }
         echo "<pre>";
-        var_export($this->orders);
+        print_r($this->orders);
         echo "<pre>";
     }
 }
