@@ -1,8 +1,12 @@
 <?php
+
+use adapter\classes\LibraryAdapter;
+use adapter\classes\LibraryOutdated;
+
 header('Access-Control-Allow-Origin: *');
 header("Access-Control-Allow-Methods: GET");
-require_once __DIR__ . "/repository/adapter/classes/LibraryAdapter.php";
-require_once __DIR__ . "/repository/adapter/classes/LibraryOutdated.php";
+require_once __DIR__ . "/repository/Structural/adapter/classes/LibraryAdapter.php";
+require_once __DIR__ . "/repository/Structural/adapter/classes/LibraryOutdated.php";
 //можно сделать еще метод пост для добавления, но я оствлю так
 $version = isset($_GET['version'])?$_GET['version']:"";
 if($version === 'current'){

@@ -1,8 +1,12 @@
 <?php
+
+use iterator\classes\TreeCollection;
+use iterator\classes\TreeNode;
+
 header('Access-Control-Allow-Origin: *');
 header("Access-Control-Allow-Methods: GET");
-require_once __DIR__ . '/repository/iterator/classes/TreeNode.php';
-require_once __DIR__ . '/repository/iterator/classes/TreeCollection.php';
+require_once __DIR__ . '/repository/Behavioral/iterator/classes/TreeNode.php';
+require_once __DIR__ . '/repository/Behavioral/iterator/classes/TreeCollection.php';
 
 $root = new TreeNode("Root");
 $node1 = new TreeNode('Node 1');

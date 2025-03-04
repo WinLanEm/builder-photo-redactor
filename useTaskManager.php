@@ -1,11 +1,17 @@
 <?php
+
+use command\classes\Task;
+use command\commands\CompleteTaskCommand;
+use command\commands\DeleteTaskCommand;
+use command\TaskManager;
+
 header('Access-Control-Allow-Origin: *');
 header("Access-Control-Allow-Methods: GET");
 
-require_once __DIR__ . '/repository/command/TaskManager.php';
-require_once __DIR__ . '/repository/command/classes/Task.php';
-require_once __DIR__ . '/repository/command/commands/CompleteTaskCommand.php';
-require_once __DIR__ . '/repository/command/commands/DeleteTaskCommand.php';
+require_once __DIR__ . '/repository/Behavioral/command/TaskManager.php';
+require_once __DIR__ . '/repository/Behavioral/command/classes/Task.php';
+require_once __DIR__ . '/repository/Behavioral/command/commands/CompleteTaskCommand.php';
+require_once __DIR__ . '/repository/Behavioral/command/commands/DeleteTaskCommand.php';
 $tasks = [
     new Task(1, "Написать код"),
     new Task(2, "Протестировать код"),

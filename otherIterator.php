@@ -1,8 +1,12 @@
 <?php
+
+use otherIterator\classes\RadioStation;
+use otherIterator\classes\StationList;
+
 header('Access-Control-Allow-Origin: *');
 header("Access-Control-Allow-Methods: GET");
-require_once __DIR__ . '/repository/otherIterator/classes/RadioStation.php';
-require_once __DIR__ . '/repository/otherIterator/classes/StationList.php';
+require_once __DIR__ . '/repository/Behavioral/otherIterator/classes/RadioStation.php';
+require_once __DIR__ . '/repository/Behavioral/otherIterator/classes/StationList.php';
 
 $stationList = new StationList();
 $station1 = new RadioStation(15);
