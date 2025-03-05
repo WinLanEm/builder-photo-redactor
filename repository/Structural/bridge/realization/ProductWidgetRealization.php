@@ -3,7 +3,8 @@
 namespace bridge\realization;
 
 use bridge\interfaces\WidgetRealizationInterface;
-use composite\models\Product;
+use bridge\objects\Product;
+
 
 require_once __DIR__ . '/../interfaces/WidgetRealizationInterface.php';
 require_once __DIR__ . '/../objects/Product.php';

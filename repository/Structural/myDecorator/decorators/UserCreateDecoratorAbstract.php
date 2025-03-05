@@ -3,7 +3,8 @@
 namespace myDecorator\decorators;
 
 use myDecorator\interfaces\UserCreateInterface;
-use state\classes\User;
+use myDecorator\models\User;
+
 
 require_once __DIR__ . '/../interfaces/UserCreateInterface.php';
 

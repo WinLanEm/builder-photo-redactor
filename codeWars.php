@@ -95,4 +95,99 @@ function toWeirdCase($string) {
     $result = implode(' ',$resultArray);
     return $result;
 }
-echo (toWeirdCase('Hello world foo bar baz'));
+function longestConsec($strarr, $k) {
+    if(empty($strarr)){
+        return "";
+    }
+    $startString = implode("",array_slice($strarr,0,$k));
+    for($i=$k - 1;$i<count($strarr);$i++){
+        if(strlen($startString) < strlen(implode("",array_slice($strarr,$i,$k)))){
+            $startString = implode("",array_slice($strarr,$i,$k));
+        }
+    }
+    return $startString;
+}
+function generateHashtag($str) {
+    if(strlen($str) === 0){
+        return false;
+    }
+    $validateString = "#";
+    for($i=0;$i<strlen($str);$i++){
+        if($str[$i] === " "){
+            $j=$i;
+            while($str[$j] === " "){
+                $j++;
+            }
+            $validateString .= strtoupper($str[$j]);
+            $i += $j - $i;
+        }else{
+            $validateString .= $str[$i];
+        }
+    }
+    if($validateString[1] !== strtoupper($validateString[1])){
+        $validateString[1] = strtoupper($validateString[1]);
+    }
+    if(strlen($validateString) > 140){
+        return false;
+    }
+    return $validateString;
+}
+
+function inArray($array1, $array2) {
+    $newArray = [];
+    foreach($array1 as $str1){
+        foreach($array2 as $str2){
+            if(str_contains($str2,$str1) && !in_array($str1,$newArray)){
+                array_push($newArray,$str1);
+            }
+        }
+    }
+    sort($newArray);
+    return $newArray;
+}
+function dirReduc($arr) {
+    $opposite = [
+        'NORTH' => 'SOUTH',
+        'SOUTH' => 'NORTH',
+        'EAST'  => 'WEST',
+        'WEST'  => 'EAST'
+    ];
+
+    $stack = [];
+
+    foreach ($arr as $direction) {
+        if (!empty($stack) && $stack[count($stack) - 1] === $opposite[$direction]) {
+            array_pop($stack);
+        } else {
+            array_push($stack, $direction);
+        }
+    }
+    return $stack;
+}
+function score($dice)
+{
+    $combinationsValue = [
+        '111' => 1000,
+        '666' => 600,
+        '555' => 500,
+        '444' => 400,
+        '333' => 300,
+        '222' => 200,
+        '1' => 100,
+        '5' => 50
+    ];
+    $combinations = array_keys($combinationsValue);
+    sort($dice);
+    $stringRes = implode("",$dice);
+    $sum = 0;
+    foreach($combinations as $comb){
+        if(str_contains($stringRes,$comb)){
+            $count = 0;
+            $stringRes = str_replace($comb,"",$stringRes,$count);
+            $sum += $combinationsValue[$comb] * $count;
+        }
+    }
+    return $sum;
+}
+
+

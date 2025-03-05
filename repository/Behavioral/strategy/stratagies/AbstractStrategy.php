@@ -3,6 +3,7 @@
 
 namespace strategy\stratagies;
 
+use DateTime;
 use strategy\interfaces\SalaryStrategyInterface;
 
 class AbstractStrategy implements SalaryStrategyInterface

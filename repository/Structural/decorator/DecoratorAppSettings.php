@@ -39,12 +39,12 @@ class DecoratorAppSettings
                 ],
                 [
                     'name' => 'notifyUsers',
-                    'enabled' => 1,
+                    'enabled' => 0,
                     'decorator_class' => OrderUpdateDecoratorNotifierUsers::class
                 ],
                 [
                     'name' => 'notifyManagers',
-                    'enabled' => 0,
+                    'enabled' => 1,
                     'decorator_class' => OrderUpdateDecoratorNotifierManagers::class
                 ]
             ],

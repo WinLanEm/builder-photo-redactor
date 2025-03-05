@@ -2,6 +2,8 @@
 
 
 namespace singleton;
+use PDO;
+
 class PostgresqlConnection
 {
     private $connection;

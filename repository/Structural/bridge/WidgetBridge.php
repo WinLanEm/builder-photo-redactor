@@ -4,6 +4,7 @@ namespace bridge;
 
 use bridge\objects\Category;
 use bridge\objects\Client;
+use bridge\objects\Product;
 use bridge\realization\CategoryWidgetRealization;
 use bridge\realization\ClientWidgetRealization;
 use bridge\realization\ProductWidgetRealization;
@@ -11,7 +12,7 @@ use bridge\widgets\WidgetBigAbstraction;
 use bridge\widgets\WidgetLongAbstract;
 use bridge\widgets\WidgetMiddleAbstraction;
 use bridge\widgets\WidgetSmallAbstraction;
-use composite\models\Product;
+
 
 require_once __DIR__ . '/realization/ProductWidgetRealization.php';
 require_once __DIR__ . '/realization/CategoryWidgetRealization.php';

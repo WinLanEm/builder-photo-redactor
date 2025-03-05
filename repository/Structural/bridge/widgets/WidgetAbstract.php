@@ -34,4 +34,5 @@ abstract class WidgetAbstract
         print_r($viewData);
         //В реальном проекте очевидно нет echo, но как пример сделаю так
     }
+    abstract function run(WidgetRealizationInterface $realization);
 }

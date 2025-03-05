@@ -5,7 +5,8 @@ namespace myDecorator;
 use myDecorator\classes\UserCreate;
 use myDecorator\decorators\UserCreateDecoratorWithEmail;
 use myDecorator\decorators\UserCreateDecoratorWithPhone;
-use state\classes\User;
+use myDecorator\models\User;
+
 
 require_once __DIR__ . '/classes/UserCreate.php';
 require_once __DIR__ . '/decorators/UserCreateDecoratorWithEmail.php';

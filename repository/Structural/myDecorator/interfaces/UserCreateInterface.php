@@ -3,7 +3,9 @@
 
 namespace myDecorator\interfaces;
 
-use state\classes\User;
+
+
+use myDecorator\models\User;
 
 interface UserCreateInterface
 {
